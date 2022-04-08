@@ -14,17 +14,18 @@ jobs:
     vmImage: 'ubuntu-latest'
   steps:
   - script: echo hello from Linux
-- job: macOS
-  pool:
-    vmImage: 'macOS-latest'
-  steps:
-  - script: echo hello from macOS
 - job: Windows
   pool:
     vmImage: 'windows-latest'
   steps:
   - script: echo hello from Windows
 
+  - task: UseDotNet@2
+    displayName: 'Install .NET Core SDK'
+    inputs:
+      version: 5.0.x
+      performMultiLevelLookup: true
+      includePreviewVersions: true # Required for preview versions
 
   - script: echo Hello, world!
   displayName: 'Run a one-line script'
