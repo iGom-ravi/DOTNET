@@ -26,6 +26,13 @@ jobs:
       version: 5.0.x
       performMultiLevelLookup: true
       includePreviewVersions: true # Required for preview versions
+ 
+  - task: DotNetCoreCLI@2
+    displayName: Build
+    inputs:
+      command: build
+      projects: '**/*.csproj'
+      arguments: '--configuration $(buildConfiguration)' # Update this to match your need
 
   - script: echo Hello, world!
   displayName: 'Run a one-line script'
