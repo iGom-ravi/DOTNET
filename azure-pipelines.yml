@@ -28,11 +28,9 @@ jobs:
       includePreviewVersions: true # Required for preview versions
  
   - task: DotNetCoreCLI@2
-    displayName: Build
     inputs:
-      command: build
-      projects: '**/*.csproj'
-      arguments: '--configuration $(buildConfiguration)' # Update this to match your need
+      command: 'build'
+      arguments: '--configuration $(buildConfiguration)'
 
   - script: echo Hello, world!
   displayName: 'Run a one-line script'
