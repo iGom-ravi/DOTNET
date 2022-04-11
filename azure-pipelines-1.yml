@@ -47,7 +47,6 @@ steps:
     custom: 'tool'
     arguments: 'install -g dotnetsay'
 - task: PublishTestResults@2
-  condition: succeedOrFailed()
   inputs: 
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
