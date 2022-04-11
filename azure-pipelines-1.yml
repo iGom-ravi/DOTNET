@@ -31,9 +31,6 @@ steps:
     packageType: 'sdk'
     version: '5.0.x'
     performMultiLevelLookup: true
-- task: DotNetCoreCLI@0
-  inputs:
-    command: 'restore'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
